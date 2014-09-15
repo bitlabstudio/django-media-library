@@ -34,10 +34,15 @@ import media_library as app
 
 dev_requires = [
     'flake8',
+    'django-libs',
 ]
 
 install_requires = [
     'django',
+    'django-generic-positions',
+    'django-user-media',
+    'django-hvad<0.5',
+    'south',
 ]
 
 

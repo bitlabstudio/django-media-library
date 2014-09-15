@@ -1,7 +1,11 @@
 Django Media Library
-============
+====================
 
 A reusable Django app to let users organize their own media.
+
+If you intend to manage files like images, pdfs or simliar as an admin, you might be interested in django-document-library_.
+.. _django-document-library: https://github.com/bitmazk/django-document-library
+
 
 Installation
 ------------
