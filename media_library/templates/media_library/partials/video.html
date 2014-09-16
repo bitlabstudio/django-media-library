@@ -1,0 +1,5 @@
+{% if 'youtube' in item.video %}
+    <a href="{{ item.video }}" class="video" data-class="video" data-video-origin="youtube" data-video-id="{{ item.video_id }}"><img src="https://img.youtube.com/vi/{{ item.video_id }}/sddefault.jpg" alt="{{ item.video }}"/><span class="glyphicon glyphicon-play-circle"></span></a>
+{% else %}
+    <a href="{{ item.video }}" class="video" data-class="video" data-video-origin="vimeo" data-video-id="{{ item.video_id }}"><img src="" alt="{{ item.video }}"/><span class="glyphicon glyphicon-play-circle"></span></a>
+{% endif %}

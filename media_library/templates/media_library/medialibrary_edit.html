@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load i18n position_tags %}
+
+{% block title |
+
+{% block main %}
+    <div class="row">
+        <div class="col-md-12">
+            <h2>{% trans "Photos & Videos" %}</h2>
+
+            <a class="btn btn-success" href="{% url "medialibrary_upload" %}"><span class="glyphicon glyphicon-plus"></span> {% trans "Upload images" %}</a>
+            <a class="btn btn-success" href="{% url "mediaitem_video_create" %}"><span class="glyphicon glyphicon-plus"></span> {% trans "Add video" %}</a>
+
+            {% if new_images %}
+                <div class="well margin-top">
+                    <h3>{% trans "Newly added images" %}</h3>
+                    <p>{% trans "To make these images visible for other users, please update their information." %}</p>
+                    <div class="row margin-top">
+                        {% for image in new_images %}
+                            <div class="col-lg-3">
+                                {% include "media_library/partials/media_image.html" with new=1 %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+
+            {% with object.media_items.all as media_items %}
+                {% if media_items %}
+                    <form action="{% url "position_bulk_update" %}" method="post">
+                        {% csrf_token %}
+                        <div id="positionContainer" class="row margin-top">
+                            {% for item in media_items|order_by_position %}
+                                <div class="col-lg-3">
+                                    {% position_input item %}
+                                    {% if item.image %}
+                                        {% include "media_library/partials/media_image.html" with image=item.image %}
+                                    {% else %}
+                                        {% include "media_library/partials/media_video.html" %}
+                                    {% endif %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </form>
+                {% endif %}
+            {% endwith %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block extrascript %}
+    <script>
+        $(document).ready(function(){
+            $('#positionContainer').sortable('option', 'handle', '.positionHandle');
+            $('.positionHandle').css('cursor', 'move');
+            $('#positionContainer').children().css('cursor', 'default');
+        })
+    </script>
+{% endblock %}

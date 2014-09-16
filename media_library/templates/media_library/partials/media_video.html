@@ -1,0 +1,12 @@
+{% load i18n %}
+
+<div class="mediaItemWrapper">
+    <a class="btn btn-success btn-xs margin-bottom" href="{% url "mediaitem_video_update" pk=item.pk %}">{% trans "Update" %}</a>
+    <div class="positionHandle pull-right">
+        <span class="handlebar"></span>
+        <span class="handlebar"></span>
+        <span class="handlebar"></span>
+    </div>
+    {% include "media_library/partials/video.html" %}
+    {% include "media_library/partials/mediaitem_meta.html" %}
+</div>

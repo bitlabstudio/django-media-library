@@ -1,0 +1,10 @@
+<div class="row" style="position: absolute; bottom: 0;">
+    <div class="col-lg-12">
+        {% if item.location %}
+            <span class="label label-warning">{{ item.location }}</span><br/>
+        {% endif %}
+        {% for taggeditem in item.tags.all %}
+            <span class="label label-info">{{ taggeditem.tag.name }}</span>
+        {% endfor %}
+    </div>
+</div>

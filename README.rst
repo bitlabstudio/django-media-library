@@ -53,11 +53,24 @@ Add the ``media_library``, ``user_media`` and ``generic_positions`` URLs to your
         url(r'^media-library/', include('media_library.urls')),
     )
 
+If you stick to the default templates or want to derive your own from them, you
+might also want to add the default styles and our simple image and video preview script.
+
+.. code-block:: html
+
+    {% load static %}
+
+    <link href="{% static "media_libraray/media_library.css" %}" rel="stylesheet">
+    <script src="{% static "media_library/preview.js" %}"></script>
+
+
 Add the ``django-user-media`` scripts to your templates to have the file upload.
 
 .. code-block:: html
 
-    {# You will also need jquery and jquery-ui. #}
+    {% load static %}
+
+    {# you will also need jquery and jquery-ui. #}
     <script src="{% static "js/jquery-1.11.1.js" %}"></script>
     <script src="{% static "js/jquery-ui-1.11.1.min.js" %}"></script>
 

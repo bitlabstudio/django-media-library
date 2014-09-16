@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load i18n thumbnail %}
+{% block title %}
+    {% if object.id %}
+        {% trans "Update video" %}
+    {% else %}
+        {% trans "Create video" %}
+    {% endif %}
+{% endblock %}
+
+{% block main %}
+    {% if object.id %}
+        <h1>{% trans "Update video information" %}</h1>
+    {% else %}
+        <h1>{% trans "Create video" %}</h1>
+    {% endif %}
+    <div class="row">
+        <div class="col-md-12">
+            {% include "profile_showreel/partials/showreelitem_form.html" with button_text="Save video" %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block extrascript %}
+    <script>
+
+        var tagsource = {{ tags|safe }};
+        $("[data-class=multilingual-tags-field]").tagging(tagsource);
+    </script>
+{% endblock %}

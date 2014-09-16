@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load i18n thumbnail %}
+{% block title %}
+    {% if object.image %}
+        {% trans "Delete image" %}
+    {% else %}
+        {% trans "Delete video" %}
+    {% endif %}
+{% endblock %}
+
+{% block main %}
+    {% if object.image %}
+        <h1>{% trans "Delete image?" %}</h1>
+    {% else %}
+        <h1>{% trans "Delete video?" %}</h1>
+    {% endif %}
+    <div class="row">
+        <div class="col-md-4">
+            {% if object.image %}
+                <img src="{% thumbnail object.image.image 300x300 upscale %}" alt="Image" />
+            {% else %}
+                <img src="//img.youtube.com/vi/{{ object.video_id }}/mqdefault.jpg" alt="Video" style="width: 300px; height: auto;" />
+            {% endif %}
+        </div>
+        <div class="col-md-8">
+            {% if object.image %}
+                <p>{% trans "Do you really want to delete the image?" %}</p>
+            {% else %}
+                <p>{% trans "Do you really want to delete the video?" %}</p>
+            {% endif %}
+            <p>{% trans "This cannot be reversed." %}</p>
+
+            <form action="." method="post">
+                {% csrf_token %}
+                <a href="{% url "medialibrary_edit" %}" class="btn btn-default"><span class="glyphicon glyphicon-arrow-left"></span> {% trans "Back to library" %}</a>
+                <input class="btn btn-danger" type="submit" value="{% trans 'Delete' %}"/>
+            </form>
+        </div>
+    </div>
+{% endblock %}

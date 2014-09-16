@@ -1,0 +1,18 @@
+{% load thumbnail i18n %}
+
+<div class="mediaItemWrapper">
+    {% if new %}
+        <a class="btn btn-success btn-xs margin-bottom" href="{% url "mediaitem_image_create" image_pk=image.pk %}">{% trans "Update" %}</a>
+    {% else %}
+        <a class="btn btn-success btn-xs margin-bottom" href="{% url "mediaitem_image_update" image_pk=image.pk %}">{% trans "Update" %}</a>
+        <div class="positionHandle pull-right">
+            <span class="handlebar"></span>
+            <span class="handlebar"></span>
+            <span class="handlebar"></span>
+        </div>
+    {% endif %}
+    <div class="mediaImageWrapper">
+        <img src="{% thumbnail image.image image.large_size upscale %}" alt="media image" data-class="image" data-src="{{ image.image.url }}"/>
+    </div>
+    {% include "media_library/partials/mediaitem_meta.html" %}
+</div>
