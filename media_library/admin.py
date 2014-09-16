@@ -1,11 +1,18 @@
-"""Admin classes for the media_library app."""
-# from django.contrib import admin
+"""Admins for the models of the ``media_library`` app."""
+from django.contrib import admin
+from django.utils.translation import ugettext_lazy as _
 
-# from . import models
+from . import models
 
 
-# class YourModelAdmin(admin.ModelAdmin):
-#    list_display = ['some', 'fields', ]
-#    search_fields = ['some', 'fieds', ]
+class MediaItemAdmin(admin.ModelAdmin):
+    """Custom admin for the ``MediaItem`` model."""
+    list_display = ['get_user', 'image', 'video']
 
-# admin.site.register(models.YourModel, YourModelAdmin)
+    def get_user(self, obj):
+        return obj.showreel.user
+    get_user.short_description = _('user')
+
+
+admin.site.register(models.MediaLibrary)
+admin.site.register(models.MediaItem, MediaItemAdmin)
