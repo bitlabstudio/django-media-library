@@ -6,7 +6,7 @@
 {% block main %}
     <h1>{% trans "Upload your photos" %}</h1>
     <div class="imageUpload">
-        {% include "user_media/partials/image_upload.html" with object=medialibrary maximum='50' mode="multiple" c_type="medialibrary" %}
+        {% include "user_media/partials/image_upload.html" with object=library maximum='50' mode="multiple" c_type="medialibrary" %}
     </div>
     <a class="btn btn-primary" href="{% url "medialibrary_edit" %}"><span class="glyphicon glyphicon-arrow-left"></span> {% trans "Back to library" %}</a>
 {% endblock %}
