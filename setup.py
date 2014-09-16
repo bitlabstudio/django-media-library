@@ -38,10 +38,11 @@ dev_requires = [
 ]
 
 install_requires = [
-    'django',
+    'django<1.7',
     'django-generic-positions',
     'django-user-media',
     'django-hvad<0.5',
+    'django-multilingual-tags',
     'south',
 ]
 
