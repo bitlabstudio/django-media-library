@@ -63,7 +63,7 @@ setup(
     keywords='django, app, reusable, media, library, gallery, organize',
     author='Daniel Kaufhold',
     author_email='daniel.kaufhold@bitmazk.com',
-    url="https://github.com/mbrochh/django-reusable-app-template",
+    url="https://github.com/bitmazk/django-media-library",
     packages=find_packages(),
     include_package_data=True,
     install_requires=install_requires,

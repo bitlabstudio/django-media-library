@@ -26,7 +26,7 @@ To get the latest commit from GitHub
 
 .. code-block:: bash
 
-    pip install -e git+git://github.com/mbrochh/django-reusable-app-template.git#egg=media_library
+    pip install -e git+git://github.com/bitmazk/django-media-library.git#egg=media_library
 
 TODO: Describe further installation steps (edit / remove the examples below):
 
