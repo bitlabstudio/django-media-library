@@ -50,11 +50,15 @@ EXTERNAL_APPS = [
     'django.contrib.sitemaps',
     'django.contrib.sites',
     'django_nose',
+    'multilingual_tags',
+    'generic_positions',
+    'user_media',
+    'hvad',
+    'django_libs',
 ]
 
 INTERNAL_APPS = [
     'media_library',
-    'media_library.tests.test_app',
 ]
 
 INSTALLED_APPS = EXTERNAL_APPS + INTERNAL_APPS
