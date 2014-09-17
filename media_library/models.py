@@ -98,6 +98,10 @@ class MediaItem(TranslatableModel):
             return 'Image of "{0}"'.format(self.library.user)
         return 'Video of "{0}"'.format(self.library.user)
 
+    def get_user(self):
+        """Returns a user for the ``django-multilingual-tags`` form API."""
+        return self.library.user
+
     def delete(self, using=None):
         # making sure, the UserMediaImage instance is removed as well.
         if self.image.id is not None:
