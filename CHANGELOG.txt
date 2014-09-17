@@ -1,5 +1,8 @@
 === (ongoing) ===
 
+
+=== 0.2 ===
+
 - added compatibility with ``django-multilingual-tags`` new user storing API
 
 === 0.1 ===
