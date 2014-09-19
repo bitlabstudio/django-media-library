@@ -101,13 +101,13 @@ class MediaItemDeleteViewTestCase(ViewRequestFactoryTestMixin, TestCase):
 
 
 class MediaItemImageCreateViewTestCase(MediaItemImageCRUDViewTestMixin,
-                                          TestCase):
+                                       TestCase):
     """Tests for the ``MediaItemImageCreateView`` view class."""
     view_class = views.MediaItemImageCreateView
 
 
 class MediaItemImageUpdateViewTestCase(MediaItemImageCRUDViewTestMixin,
-                                          TestCase):
+                                       TestCase):
     """Tests for the ``MediaItemImageUpdateView`` view class."""
     view_class = views.MediaItemImageUpdateView
 
@@ -119,13 +119,13 @@ class MediaItemImageUpdateViewTestCase(MediaItemImageCRUDViewTestMixin,
 
 
 class MediaItemVideoCreateViewTestCase(MediaItemVideoCRUDViewTestMixin,
-                                          TestCase):
+                                       TestCase):
     """Tests for the ``MediaItemVideoCreateView`` view class."""
     view_class = views.MediaItemVideoCreateView
 
 
 class MediaItemVideoUpdateViewTestCase(MediaItemVideoCRUDViewTestMixin,
-                                          TestCase):
+                                       TestCase):
     """Tests for the ``MediaItemVideoUpdateView`` view class."""
     view_class = views.MediaItemVideoUpdateView
 

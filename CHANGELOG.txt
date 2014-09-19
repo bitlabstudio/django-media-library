@@ -1,5 +1,7 @@
 === (ongoing) ===
 
+- Fixed template inclusions
+- Fixed flake8 issues
 
 === 0.2 ===
 

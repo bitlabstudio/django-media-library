@@ -10,7 +10,7 @@ from django.views.generic import (
     TemplateView,
     UpdateView,
 )
-from django.shortcuts import get_object_or_404, redirect
+from django.shortcuts import get_object_or_404
 
 from django_libs.views_mixins import AjaxResponseMixin
 from multilingual_tags.models import Tag
@@ -119,8 +119,8 @@ class MediaItemDeleteView(DeleteView):
         self.object = self.get_object(self.queryset)
         if self.object.library.user != request.user:
             raise Http404
-        return super(MediaItemDeleteView, self).dispatch(request, *args,
-                                                            **kwargs)
+        return super(MediaItemDeleteView, self).dispatch(
+            request, *args, **kwargs)
 
     def get_success_url(self):
         return reverse('medialibrary_edit')

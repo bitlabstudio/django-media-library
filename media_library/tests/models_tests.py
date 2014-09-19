@@ -25,11 +25,11 @@ class MediaItemTestCase(TestCase):
         self.mediaitem = factories.MediaItemFactory(
             showreel=self.library,
             video='https://youtube.com/watch?v=123456',
-            )
+        )
         self.umedia_image = UserMediaImageFactory()
         self.mediaitemimage = factories.MediaItemFactory(
             video=None, image=self.umedia_image,
-            )
+        )
 
     def test_delete(self):
         self.mediaitemimage.delete()

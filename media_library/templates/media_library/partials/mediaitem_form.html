@@ -1,9 +1,9 @@
 {% load i18n %}
 <form action="." method="post">
     {% csrf_token %}
-    {% include "partials/form_non_field_errors.html" %}
+    {% include "django_libs/partials/form_non_field_errors.html" %}
     {% for field in form %}
-        {% include "partials/form_field.html" %}
+        {% include "django_libs/partials/form_field.html" %}
     {% endfor %}
     <a class="btn btn-default" href="{% url "medialibrary_edit" %}"><span class="glyphicon glyphicon-arrow-left"></span> {% trans "Back to library" %}</a>
     <input type="submit" class="btn btn-success pull-right" value="{% trans button_text %}" />

@@ -48,7 +48,7 @@ class MediaItemImageFormTestCase(TestCase):
         form = forms.MediaItemImageForm(
             data=self.data_update, user=self.user, image=self.image,
             instance=instance,
-            )
+        )
         self.assertTrue(form.is_valid(), msg=(
             'The form should be valid. Errors: {0}'.format(form.errors)))
 
@@ -82,7 +82,7 @@ class MediaItemVideoFormTestCase(TestCase):
         }
         self.data_update = {
             'location': u'Hamburg',
-            }
+        }
 
     def test_form(self):
         form = forms.MediaItemVideoForm(data=self.data, user=self.user)
@@ -96,7 +96,7 @@ class MediaItemVideoFormTestCase(TestCase):
 
         form = forms.MediaItemVideoForm(
             data=self.data_update, user=self.user, instance=instance,
-            )
+        )
         self.assertTrue(form.is_valid(), msg=(
             'The form should be valid. Errors: {0}'.format(form.errors)))
 
