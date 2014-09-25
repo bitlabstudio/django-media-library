@@ -1,9 +1,9 @@
 function add_content($content, $element) {
     var height
-        , width
-        , $viewer_bg
-        , padding_top
-        , $body;
+       ,width
+       ,$viewer_bg
+       ,padding_top
+       ,$body;
 
     $body = $('body');
     $viewer_bg = $('<div style="display: none;" class="viewerbg"></div>');
@@ -37,8 +37,8 @@ function add_content($content, $element) {
 
             $content.css({
                 'height': height
-                , 'max-height': window.innerHeight
-                , 'width': 'auto'
+               ,'max-height': window.innerHeight
+               ,'width': 'auto'
             });
 
         } else {
@@ -47,8 +47,8 @@ function add_content($content, $element) {
 
             $content.css({
                 'width': width
-                , 'max-width': window.innerWidth
-                , 'height': 'auto'
+               ,'max-width': window.innerWidth
+               ,'height': 'auto'
             });
 
         }
@@ -85,7 +85,7 @@ function open_image($element) {
     // opens the full image for the thumb
 
     var img_url
-        , $img;
+       ,$img;
 
     img_url = $element.attr('data-src');
     $img = $('<img src="' + img_url + '" alt="Image" />');
@@ -99,8 +99,8 @@ function open_video($element) {
     // opens the preview image as a video
 
     var video_id
-        , video_url
-        , $iframe;
+       ,video_url
+       ,$iframe;
 
     video_id = $element.attr('data-video-id');
     video_url = ($element.attr('href').indexOf('youtube') !== -1) ? 'https://www.youtube.com/embed/' : '//player.vimeo.com/video/';
