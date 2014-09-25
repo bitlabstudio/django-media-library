@@ -1,5 +1,6 @@
 === (ongoing) ===
 
+- Fixed indents in preview.js
 - Fixed template inclusions
 - Fixed flake8 issues
 
