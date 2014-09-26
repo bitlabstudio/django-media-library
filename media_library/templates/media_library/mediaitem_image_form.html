@@ -16,8 +16,9 @@
 
 {% block extrascript %}
     <script>
-
-        var tagsource = {{ tags|safe }};
-        $("[data-class=multilingual-tags-field]").tagging(tagsource);
+        $(document).ready(function(){
+            var tagsource = {{ tags|safe }};
+            $("[data-class=multilingual-tags-field]").tagging(tagsource);
+        });
     </script>
 {% endblock %}

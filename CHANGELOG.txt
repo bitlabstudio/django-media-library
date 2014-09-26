@@ -1,5 +1,6 @@
 === (ongoing) ===
 
+- fixed media and image forms
 - Fixed indents in preview.js
 - Fixed template inclusions
 - Fixed flake8 issues
