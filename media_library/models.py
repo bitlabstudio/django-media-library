@@ -1,12 +1,13 @@
 """Models for the ``media_library`` app."""
 from django.contrib.contenttypes import generic
 from django.core.urlresolvers import reverse
+from django.core.exceptions import ValidationError
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
 from hvad.models import TranslatableModel, TranslatedFields
 
-from .utils import get_video_id
+from .utils import get_video_id, validate_video_url
 
 
 class MediaLibrary(models.Model):
@@ -97,6 +98,21 @@ class MediaItem(TranslatableModel):
         if self.image is not None:
             return 'Image of "{0}"'.format(self.library.user)
         return 'Video of "{0}"'.format(self.library.user)
+
+    def clean(self):
+        """
+        Checks if the video has the correct format.
+
+        Currently supported are vimeo and youtube.
+
+        """
+        if self.video and self.get_video_origin() is None:
+            raise ValidationError(_(
+                'The video URL was not in a valid Vimeo or YouTube format.'
+            ))
+
+    def get_video_origin(self):
+        return validate_video_url(self.video)
 
     def get_user(self):
         """Returns a user for the ``django-multilingual-tags`` form API."""
