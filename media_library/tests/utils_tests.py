@@ -40,6 +40,7 @@ class ValidateVideoURLTestCase(TestCase):
         self.vm_links = [
             'http://vimeo.com/channels/staffpicks/110140870',
             'http://vimeo.com/59777392',
+            'http://vimeopro.com/foo/bar/110140870',
             'http://vimeo.com/video/59777392',
             'http://www.vimeo.com/video/59777392',
             ('http://vimeo.com/groups/thedirectorofphotography/'

@@ -1,5 +1,8 @@
 === (ongoing) ===
 
+
+- fixed URL validation for Vimeo Pro URLs
+
 === 0.3.1 ===
 
 - fixed MediaItem.delete method
