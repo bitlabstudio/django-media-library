@@ -120,7 +120,7 @@ class MediaItem(TranslatableModel):
 
     def delete(self, using=None):
         # making sure, the UserMediaImage instance is removed as well.
-        if self.image.id is not None:
+        if self.image is not None:
             self.image.delete()
         super(MediaItem, self).delete(using=using)
 

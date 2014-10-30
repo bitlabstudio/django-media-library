@@ -1,5 +1,7 @@
 === (ongoing) ===
 
+- fixed MediaItem.delete method
+
 === 0.3 ===
 
 - improved URL validation
