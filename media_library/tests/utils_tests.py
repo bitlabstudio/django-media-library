@@ -32,7 +32,8 @@ class ValidateVideoURLTestCase(TestCase):
             'http://www.youtube.de/watch?v=-JyZLS2IhkQ&list=foo',
             'http://www.youtube.de/watch?v=-JyZLS2IhkQ',
             'https://youtube.com/watch?v=-JyZLS2IhkQ',
-            'https://www.youtube.com/watch?v=PguLNvCcOHQ&list=RDPguLNvCcOHQ#t=0',
+            ('https://www.youtube.com/watch?v=PguLNvCcOHQ'
+             '&list=RDPguLNvCcOHQ#t=0'),
             'http://youtu.be/PguLNvCcOHQ',
             'http://youtu.be/PguLNvCcOHQ?list=RDPguLNvCcOHQ',
         ]
@@ -41,7 +42,8 @@ class ValidateVideoURLTestCase(TestCase):
             'http://vimeo.com/59777392',
             'http://vimeo.com/video/59777392',
             'http://www.vimeo.com/video/59777392',
-            'http://vimeo.com/groups/thedirectorofphotography/videos/110016243',
+            ('http://vimeo.com/groups/thedirectorofphotography/'
+             'videos/110016243'),
         ]
         self.invalid_links = [
             'http://vimeo.com/',

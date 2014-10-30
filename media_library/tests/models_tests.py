@@ -60,14 +60,15 @@ class MediaItemTestCase(TestCase):
             'https://www.youtube.com/watch?v=-JyZLS2IhkQ',
             'http://www.youtube.de/watch?v=-JyZLS2IhkQ',
             'https://youtube.com/watch?v=-JyZLS2IhkQ',
-            'https://www.youtube.com/watch?v=PguLNvCcOHQ&list=RDPguLNvCcOHQ#t=0',
+            ('https://www.youtube.com/watch?v=PguLNvCcOHQ'
+             '&list=RDPguLNvCcOHQ#t=0'),
             'http://youtu.be/PguLNvCcOHQ?list=RDPguLNvCcOHQ ',
             'http://vimeo.com/channels/staffpicks/110140870',
             'http://vimeo.com/59777392',
             'http://vimeo.com/video/59777392',
-            'http://vimeo.com/groups/thedirectorofphotography/videos/110016243',
+            ('http://vimeo.com/groups/thedirectorofphotography/'
+             'videos/110016243'),
         ]
         for link in linklist:
             self.mediaitem.video = link
             self.assertNotRaises(self.mediaitem.clean)
-
