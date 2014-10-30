@@ -1,6 +1,8 @@
 === (ongoing) ===
 
 
+=== 0.3.2 ===
+
 - fixed URL validation for Vimeo Pro URLs
 
 === 0.3.1 ===
