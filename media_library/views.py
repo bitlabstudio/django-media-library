@@ -152,7 +152,7 @@ class MediaLibraryUploadView(TemplateView):
     @method_decorator(login_required)
     def dispatch(self, request, *args, **kwargs):
         return super(MediaLibraryUploadView, self).dispatch(request, *args,
-                                                        **kwargs)
+                                                            **kwargs)
 
     def get_context_data(self, **kwargs):
         ctx = super(MediaLibraryUploadView, self).get_context_data(**kwargs)
