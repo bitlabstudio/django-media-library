@@ -1,5 +1,9 @@
 === (ongoing) ===
 
+=== 0.3 ===
+
+- improved URL validation
+
 === 0.2.1 ===
 
 - fixed media and image forms
