@@ -1,5 +1,8 @@
 === (ongoing) ===
 
+- added support for `success_url` GET/POST parameter to manipulate the success
+  url for views that have a `get_success_url` method. Just add a hidden field
+  to `mediaitem_delete.html` and `mediaitem_form.html`.
 
 === 0.3.2 ===
 

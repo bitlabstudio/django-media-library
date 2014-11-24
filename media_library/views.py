@@ -50,6 +50,8 @@ class MediaItemImageCRUDViewMixin(object):
         return ctx
 
     def get_success_url(self):
+        if 'success_url' in self.request.REQUEST:
+            return self.request.REQUEST.get('success_url')
         return reverse('medialibrary_edit')
 
 
@@ -80,6 +82,8 @@ class MediaItemVideoCRUDViewMixin(CreateView):
         return kwargs
 
     def get_success_url(self):
+        if 'success_url' in self.request.REQUEST:
+            return self.request.REQUEST.get('success_url')
         return reverse('medialibrary_edit')
 
 
@@ -123,6 +127,8 @@ class MediaItemDeleteView(DeleteView):
             request, *args, **kwargs)
 
     def get_success_url(self):
+        if 'success_url' in self.request.REQUEST:
+            return self.request.REQUEST.get('success_url')
         return reverse('medialibrary_edit')
 
 
