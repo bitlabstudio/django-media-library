@@ -1,5 +1,7 @@
 === 0.3.X (ongoing to be released as 0.4) ===
 
+- Changed main url pattern to `^edit/$`
+
 === 0.3.3 ===
 
 - added support for `success_url` GET/POST parameter to manipulate the success

@@ -6,7 +6,7 @@ from . import views
 
 urlpatterns = patterns(
     '',
-    url(r'^$', views.MediaLibraryEditView.as_view(),
+    url(r'^edit/$', views.MediaLibraryEditView.as_view(),
         name='medialibrary_edit'),
     url(r'^upload/$', views.MediaLibraryUploadView.as_view(),
         name='medialibrary_upload'),
