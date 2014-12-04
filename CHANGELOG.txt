@@ -1,19 +1,12 @@
 === 0.3.X (ongoing to be released as 0.4) ===
 
+- automatically selecting which vimeo image to select by size of image parent
+- fixed admin
 - Changed main url pattern to `^edit/$`
-
-=== 0.3.3 ===
-
 - added support for `success_url` GET/POST parameter to manipulate the success
   url for views that have a `get_success_url` method. Just add a hidden field
   to `mediaitem_delete.html` and `mediaitem_form.html`.
-
-=== 0.3.2 ===
-
 - fixed URL validation for Vimeo Pro URLs
-
-=== 0.3.1 ===
-
 - fixed MediaItem.delete method
 
 === 0.3 ===

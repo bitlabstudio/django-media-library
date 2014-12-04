@@ -10,7 +10,7 @@ class MediaItemAdmin(admin.ModelAdmin):
     list_display = ['get_user', 'image', 'video']
 
     def get_user(self, obj):
-        return obj.showreel.user
+        return obj.library.user
     get_user.short_description = _('user')
 
 

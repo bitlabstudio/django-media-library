@@ -75,7 +75,14 @@ function get_preview_image($element) {
         dataType: "jsonp",
         url: url,
         success: function(data){
-            $element.find('img').attr('src', data[0].thumbnail_medium)
+            var thumb_size = 'medium';
+            if ($element.parent().width() > 200) {
+                thumb_size = 'large';
+            }
+            if ($element.parent().width() < 100) {
+                thumb_size = 'small';
+            }
+            $element.find('img').attr('src', data[0]['thumbnail_' + thumb_size]);
         }
     });
 }
