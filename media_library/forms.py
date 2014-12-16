@@ -22,7 +22,10 @@ class MediaItemImageForm(TaggingFormMixin, TranslatableModelForm):
     def __init__(self, user, image, *args, **kwargs):
         super(MediaItemImageForm, self).__init__(*args, **kwargs)
         self.image = image
-        self.library = user.medialibraries.all()[0]
+        try:
+            self.library = user.medialibraries.all()[0]
+        except IndexError:
+            self.library = models.MediaLibrary.objects.create(user=user)
         self.fields['date'].widget.attrs.update({'data-class': 'datepicker'})
 
     def save(self, commit=True):
@@ -48,7 +51,10 @@ class MediaItemVideoForm(TaggingFormMixin, TranslatableModelForm):
 
     def __init__(self, user, *args, **kwargs):
         super(MediaItemVideoForm, self).__init__(*args, **kwargs)
-        self.library = user.medialibraries.all()[0]
+        try:
+            self.library = user.medialibraries.all()[0]
+        except IndexError:
+            self.library = models.MediaLibrary.objects.create(user=user)
         self.fields['date'].widget.attrs.update({'data-class': 'datepicker'})
 
     def save(self, commit=True):

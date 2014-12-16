@@ -1,5 +1,6 @@
 === 0.3.X (ongoing to be released as 0.4) ===
 
+- automatically creating library if none exists before creating items
 - automatically selecting which vimeo image to select by size of image parent
 - fixed admin
 - Changed main url pattern to `^edit/$`
