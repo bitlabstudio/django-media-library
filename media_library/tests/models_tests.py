@@ -11,9 +11,47 @@ class MediaLibraryTestCase(TestCase):
     """Tests for the ``MediaLibrary`` model class."""
     longMessage = True
 
+    def setUp(self):
+        self.library = factories.MediaLibraryFactory()
+
     def test_instantiation(self):
-        library = factories.MediaLibraryFactory()
-        self.assertTrue(library.pk)
+        self.assertTrue(self.library.pk)
+
+    def test_media_images(self):
+        image = factories.MediaItemFactory(
+            image=UserMediaImageFactory(),
+            library=self.library,
+            video=None,
+        )
+        factories.MediaItemFactory(library=self.library)
+        self.assertEqual(
+            self.library.media_images().count(), 1, msg=(
+                '``media_images`` should return only one item.'
+            )
+        )
+        self.assertEqual(
+            self.library.media_images()[0], image, msg=(
+                '``media_images`` should return the created image.'
+            )
+        )
+
+    def test_media_videos(self):
+        factories.MediaItemFactory(
+            image=UserMediaImageFactory(),
+            library=self.library,
+            video=None,
+            )
+        video = factories.MediaItemFactory(library=self.library)
+        self.assertEqual(
+            self.library.media_videos().count(), 1, msg=(
+                '``media_videos`` should return only one item.'
+            )
+        )
+        self.assertEqual(
+            self.library.media_videos()[0], video, msg=(
+                '``media_videos`` should return the created video.'
+            )
+        )
 
 
 class MediaItemTestCase(TestCase):

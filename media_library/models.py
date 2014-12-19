@@ -35,6 +35,14 @@ class MediaLibrary(models.Model):
     def get_absolute_url(self):
         return reverse('showreel_edit')
 
+    def media_images(self):
+        """Returns all image items of a library"""
+        return self.media_items.filter(image__isnull=False)
+
+    def media_videos(self):
+        """Returns all video items of a library"""
+        return self.media_items.filter(video__isnull=False)
+
 
 class MediaItem(TranslatableModel):
     """
