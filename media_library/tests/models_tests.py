@@ -40,7 +40,7 @@ class MediaLibraryTestCase(TestCase):
             image=UserMediaImageFactory(),
             library=self.library,
             video=None,
-            )
+        )
         video = factories.MediaItemFactory(library=self.library)
         self.assertEqual(
             self.library.media_videos().count(), 1, msg=(

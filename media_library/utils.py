@@ -1,6 +1,6 @@
 """Utilities for the ``media_library`` app."""
 import re
-VIMEO_PATTERN = re.compile('(?:https?://)?(?:www.)?(vimeo)(?:pro)?.com/(?:.*/)?(\d+)')
+VIMEO_PATTERN = re.compile('(?:https?://)?(?:www.)?(vimeo)(?:pro)?.com/(?:.*/)?(\d+)')  # NOQA
 YOUTUBE_PATTERN = re.compile(
     '(?:https?://)?(?:(?:www\.)?(youtube)(?:\.\w{2,3})+/watch\?.*v=([a-zA-Z0-9_-]+)&?.*|(youtu\.be)/([a-zA-Z0-9_-]+))'  # NOQA
 )
